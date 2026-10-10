@@ -92,7 +92,7 @@ let
         { name = "Vulnix"; package = "vulnix"; command = "vulnix"; }
         { name = "Nuclei"; package = "nuclei"; command = "nuclei"; }
         { name = "OSV Scanner"; package = "osv-scanner"; command = "osv-scanner"; }
-        { name = "Semgrep"; package = "semgrep"; command = "semgrep"; }
+        # { name = "Semgrep"; package = "semgrep"; command = "semgrep"; }
         { name = "Grype"; package = "grype"; command = "grype"; }
         { name = "Trivy"; package = "trivy"; command = "trivy"; }
         { name = "Syft"; package = "syft"; command = "syft"; }
@@ -101,8 +101,8 @@ let
         { name = "Detect Secrets"; package = "detect-secrets"; command = "detect-secrets"; }
         { name = "Cargo Audit"; package = "cargo-audit"; command = "cargo-audit"; }
         { name = "Pip Audit"; package = "pip-audit"; command = "pip-audit"; }
-        { name = "Bandit"; package = "python3Packages.bandit"; command = "bandit"; }
-        { name = "Safety"; package = "python3Packages.safety"; command = "safety"; }
+        { name = "Bandit"; package = "python313Packages.bandit"; command = "bandit"; }
+        { name = "Safety"; package = "python313Packages.safety"; command = "safety"; }
         { name = "Checkov"; package = "checkov"; command = "checkov"; }
         { name = "Terrascan"; package = "terrascan"; command = "terrascan"; }
         { name = "TFsec"; package = "tfsec"; command = "tfsec"; }
@@ -129,7 +129,7 @@ let
         { name = "Fcrackzip"; package = "fcrackzip"; command = "fcrackzip"; }
         { name = "TrueCrack"; package = "truecrack"; command = "truecrack"; }
         { name = "Legba"; package = "legba"; command = "legba"; }
-        { name = "Patator"; package = "python3Packages.patator"; command = "patator.py"; }
+        { name = "Patator"; package = "python313Packages.patator"; command = "patator.py"; }
         { name = "H8mail"; package = "h8mail"; command = "h8mail"; }
         { name = "PassDetective"; package = "passdetective"; command = "passdetective"; }
       ];
@@ -149,7 +149,7 @@ let
         { name = "Wifite"; package = "wifite2"; command = "wifite"; }
         { name = "KillerBee"; package = "killerbee"; command = "zbid"; }
         { name = "Zigpy CLI"; package = "zigpy-cli"; command = "zigpy"; }
-        { name = "Bettercap"; package = "bettercap"; command = "bettercap"; }
+        { name = "ettercap"; package = "ettercap"; command = "ettercap"; }
         { name = "BlueZ"; package = "bluez"; command = "bluetoothctl"; }
       ];
     }
@@ -170,7 +170,7 @@ let
         { name = "Iperf3"; package = "iperf3"; command = "iperf3"; }
         { name = "Hping"; package = "hping"; command = "hping3"; }
         { name = "Fping"; package = "fping"; command = "fping"; }
-        { name = "Scapy"; package = "python3Packages.scapy"; command = "scapy"; }
+        { name = "Scapy"; package = "python313Packages.scapy"; command = "scapy"; }
         { name = "Ostinato"; package = "ostinato"; command = "ostinato"; }
       ];
     }
@@ -235,9 +235,9 @@ let
         { name = "Honggfuzz"; package = "honggfuzz"; command = "honggfuzz"; }
         { name = "Radamsa"; package = "radamsa"; command = "radamsa"; }
         { name = "ZZUF"; package = "zzuf"; command = "zzuf"; }
-        { name = "Pwntools"; package = "python3Packages.pwntools"; command = "pwn"; }
-        { name = "ROPgadget"; package = "python3Packages.ropgadget"; command = "ROPgadget"; }
-        # { name = "Angr"; package = "python3Packages.angr"; command = "angr"; }
+        { name = "Pwntools"; package = "python313Packages.pwntools"; command = "pwn"; }
+        { name = "ROPgadget"; package = "python313Packages.ropgadget"; command = "ROPgadget"; }
+        # { name = "Angr"; package = "python313Packages.angr"; command = "angr"; }
         { name = "Apktool"; package = "apktool"; command = "apktool"; }
         { name = "JADX"; package = "jadx"; command = "jadx"; }
         { name = "Dex2jar"; package = "dex2jar"; command = "d2j-dex2jar"; }
@@ -277,7 +277,7 @@ let
         { name = "Pip Audit"; package = "pip-audit"; command = "pip-audit"; }
         { name = "Cargo Audit"; package = "cargo-audit"; command = "cargo-audit"; }
         { name = "Go Vulnerability Check"; package = "govulncheck"; command = "govulncheck"; }
-        { name = "Whispers"; package = "whispers"; command = "whispers"; }
+        # { name = "Whispers"; package = "whispers"; command = "whispers"; }
         { name = "Betterleaks"; package = "betterleaks"; command = "betterleaks"; }
         { name = "Kingfisher"; package = "kingfisher"; command = "kingfisher"; }
         { name = "Xeol"; package = "xeol"; command = "xeol"; }
@@ -317,7 +317,7 @@ let
         { name = "JADX"; package = "jadx"; command = "jadx"; }
         { name = "Apkeep"; package = "apkeep"; command = "apkeep"; }
         { name = "ESP Tool"; package = "esptool"; command = "esptool"; }
-        { name = "CHIPSEC"; package = "chipsec"; command = "chipsec_main"; }
+        # { name = "CHIPSEC"; package = "chipsec"; command = "chipsec_main"; }
         { name = "Teensy Loader CLI"; package = "teensy-loader-cli"; command = "teensy_loader_cli"; }
         { name = "Packetry"; package = "packetry"; command = "packetry"; }
         { name = "Cardpeek"; package = "cardpeek"; command = "cardpeek"; }
@@ -333,9 +333,9 @@ let
         { name = "LDeep"; package = "ldeep"; command = "ldeep"; }
         { name = "OpenLDAP Search"; package = "openldap"; command = "ldapsearch"; }
         { name = "Samba Client"; package = "samba"; command = "smbclient"; }
-        { name = "Impacket Secretsdump"; package = "python3Packages.impacket"; command = "secretsdump.py"; }
-        { name = "Impacket GetUserSPNs"; package = "python3Packages.impacket"; command = "GetUserSPNs.py"; }
-        { name = "NetExec"; package = "netexec"; command = "nxc"; }
+        { name = "Impacket Secretsdump"; package = "python313Packages.impacket"; command = "secretsdump.py"; }
+        { name = "Impacket GetUserSPNs"; package = "python313Packages.impacket"; command = "GetUserSPNs.py"; }
+        # { name = "NetExec"; package = "netexec"; command = "nxc"; }
         { name = "Enum4linux-ng"; package = "enum4linux-ng"; command = "enum4linux-ng"; }
       ];
     }

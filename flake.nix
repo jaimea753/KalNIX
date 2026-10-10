@@ -4,15 +4,16 @@
   outputs = { self, nixpkgs, ... }:
     let
       system = "x86_64-linux";
+      lib = nixpkgs.lib;
 
-      os = nixpkgs.lib.nixosSystem {
+      os = lib.nixosSystem {
         inherit system;
         modules = [
           ./configuration.nix
         ];
       };
 
-      vm = nixpkgs.lib.nixosSystem {
+      vm = lib.nixosSystem {
         inherit system;
         modules = [
           ./configuration.nix
@@ -20,7 +21,7 @@
             virtualisation.vmVariant = {
               virtualisation.memorySize = 2048;
               virtualisation.cores = 2;
-              virtualisation.graphics = false;
+              virtualisation.graphics = true;
             };
           }
         ];
