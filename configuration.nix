@@ -13,8 +13,8 @@ in
       enable = true;
       allowedTCPPorts = [ ];
       allowedUDPPorts = [ ];
-    }
-  }
+    };
+  };
 
   users.users.kalnix = {
     isNormalUser = true;
@@ -78,18 +78,17 @@ in
 
   environment.etc."xdg/menus/applications-merged/security-tools.menu".source =
     securityTools.menuXml;
-
-  environment.etc."xdg/menus/applications-merged/security.directory".text = ''
-    [Desktop Entry]
-    Type=Directory
-    Name=Security
-    Comment=Security assessment tools
-  '';
+  
+  environment.etc."security-vm/missing-packages.txt".text =
+    lib.concatStringsSep "\n" securityTools.missingPackages + "\n";
   
   environment.variables = {
     EDITOR = "vim";
     PAGER = "less";
   };
+
+  security.polkit.enable = true;
+  security.polkit.enablePkexecWrapper = true;
 
   system.stateVersion = "26.04";
 }
