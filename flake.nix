@@ -1,22 +1,22 @@
+
 {
+  description = "KalNIX nix module";
+
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-  outputs = { self, nixpkgs, ... }:
+  outputs = inputs@{ self, nixpkgs, ... }:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
 
-      os = lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./configuration.nix
-        ];
-      };
-
       vm = lib.nixosSystem {
         inherit system;
+
+        specialArgs = { inherit inputs; };
+
         modules = [
           ./configuration.nix
+
           {
             virtualisation.vmVariant = {
               virtualisation.memorySize = 2048;
@@ -28,15 +28,14 @@
       };
     in
     {
-      nixosConfigurations.my-os = os;
+      nixosModules.default = ./configuration.nix;
+      nixosModules.kalnix = ./configuration.nix;
 
       packages.${system}.vm =
         vm.config.system.build.vm;
-
-      checks.${system}.os-build =
-        os.config.system.build.toplevel;
 
       checks.${system}.vm-build =
         vm.config.system.build.vm;
     };
 }
+
